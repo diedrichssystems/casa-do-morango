@@ -14,13 +14,16 @@
     <link rel="apple-touch-icon" href="/logo/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="/src/styles.css" />
-    <link rel="preload" as="image" href="/img/bandejas.webp" />
+    <link rel="preload" as="image" href="/img/bandejas.webp" imagesrcset="/img/bandejas-sm.webp 540w, /img/bandejas.webp 1080w" imagesizes="(max-width: 900px) 92vw, 46vw" />
     <script>
-      // primeiro acesso da sessão: mostra a abertura (marcado antes de pintar para não piscar)
-      document.documentElement.classList.add('js');
-      if (!sessionStorage.getItem('cm-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('has-intro');
+      try {
+        if (!location.hash && !sessionStorage.getItem('cm-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.documentElement.classList.add('has-intro');
+          sessionStorage.setItem('cm-intro', '1');
+        }
+      } catch { /* Com armazenamento indisponível, abre direto na página inicial. */ }
     </script>
   </head>
   <body>
@@ -34,16 +37,6 @@
           <span class="intro__line"><img src="/logo/letreiro-1.webp" alt="" width="520" height="77" /></span>
           <span class="intro__line"><img src="/logo/letreiro-2.webp" alt="" width="720" height="101" /></span>
         </div>
-        <div class="intro__load"><span class="intro__bar"><i></i></span><span class="intro__count">000</span></div>
-      </div>
-      <div class="intro__wipe"></div>
-    </div>
-
-    <!-- Cortina entre seções -->
-    <div class="curtain" aria-hidden="true">
-      <div class="curtain__panel">
-        <img class="curtain__sym" src="/logo/simbolo.webp" alt="" width="420" height="553" />
-        <span class="curtain__label"></span>
       </div>
     </div>
 
@@ -56,10 +49,10 @@
           <img class="hdr__logo-light" src="/logo/horizontal-clara.webp" alt="" width="640" height="217" />
         </a>
         <nav class="hdr__nav" aria-label="Seções">
-          <a href="#produtos" data-label="Produtos">Produtos</a>
-          <a href="#sobre" data-label="A casa">A casa</a>
-          <a href="#como-pedir" data-label="Como pedir">Como pedir</a>
-          <a href="#visite" data-label="Visite">Visite</a>
+          <a href="#produtos">Produtos</a>
+          <a href="#sobre">A casa</a>
+          <a href="#como-pedir">Como pedir</a>
+          <a href="#visite">Visite</a>
         </nav>
         <a class="btn btn--red hdr__cta" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango!%20Gostaria%20de%20fazer%20um%20pedido%20%F0%9F%8D%93" target="_blank" rel="noopener" data-wa>
           <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir agora</span>
@@ -74,10 +67,10 @@
     <div class="menu" id="menu" aria-hidden="true" data-menu>
       <div class="menu__in">
         <nav class="menu__nav" aria-label="Menu">
-          <a href="#produtos" data-label="Produtos"><small>01</small><span>Produtos</span></a>
-          <a href="#sobre" data-label="A casa"><small>02</small><span>A casa</span></a>
-          <a href="#como-pedir" data-label="Como pedir"><small>03</small><span>Como pedir</span></a>
-          <a href="#visite" data-label="Visite"><small>04</small><span>Visite</span></a>
+          <a href="#produtos"><small>01</small><span>Produtos</span></a>
+          <a href="#sobre"><small>02</small><span>A casa</span></a>
+          <a href="#como-pedir"><small>03</small><span>Como pedir</span></a>
+          <a href="#visite"><small>04</small><span>Visite</span></a>
         </nav>
         <div class="menu__info">
           <p><strong>Rua 21 de Abril, 80</strong><br />Centro, em frente ao Mercado Municipal<br />Araguaína - TO</p>
@@ -99,23 +92,23 @@
               <span class="line"><span>mais <em>fresquinho</em></span></span>
               <span class="line"><span>de Araguaína.</span></span>
             </h1>
-            <div class="hero__btns" data-hero-in>
+            <div class="hero__btns">
               <a class="btn btn--red btn--lg" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango!%20Gostaria%20de%20fazer%20um%20pedido%20%F0%9F%8D%93" target="_blank" rel="noopener" data-wa>
                 <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Fazer pedido no WhatsApp</span>
               </a>
-              <a class="btn btn--line btn--lg" href="#produtos" data-label="Produtos"><span>Ver produtos</span></a>
+              <a class="btn btn--line btn--lg" href="#produtos"><span>Ver produtos</span></a>
             </div>
-            <ul class="facts" data-hero-in>
+            <ul class="facts">
               <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock" /></svg><span><strong>Seg a sáb</strong>7h às 19h30</span></li>
               <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin" /></svg><span><strong>Rua 21 de Abril, 80</strong>Centro</span></li>
               <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-card" /></svg><span><strong>Dinheiro, cartão</strong>e PIX</span></li>
             </ul>
           </div>
           <div class="hero__media">
-            <div class="hero__frame" data-hero-frame>
+            <div class="hero__frame">
               <img src="/img/bandejas.webp" srcset="/img/bandejas-sm.webp 540w, /img/bandejas.webp 1080w" sizes="(max-width: 900px) 92vw, 46vw" alt="Morangos vermelhos e graúdos em bandejas" width="1080" height="788" fetchpriority="high" />
             </div>
-            <div class="hero__tag" data-hero-tag>
+            <div class="hero__tag">
               <img src="/logo/simbolo.webp" alt="" width="420" height="553" />
               <span><strong>Morango é o nosso</strong>carro-chefe</span>
             </div>
@@ -157,7 +150,7 @@
             </article>
           </div>
           <ul class="pills" aria-label="Alguns dos produtos" data-pills>
-            <li><a href="#item-morango" data-label="Catálogo" data-item="morango">Morango</a></li><li><a href="#item-maca" data-label="Catálogo" data-item="maca">Maçã</a></li><li><a href="#item-manga" data-label="Catálogo" data-item="manga">Manga</a></li><li><a href="#item-banana" data-label="Catálogo" data-item="banana">Banana</a></li><li><a href="#item-uva" data-label="Catálogo" data-item="uva">Uva</a></li><li><a href="#item-mamao" data-label="Catálogo" data-item="mamao">Mamão</a></li><li><a href="#item-abacate" data-label="Catálogo" data-item="abacate">Abacate</a></li><li><a href="#item-tamara" data-label="Catálogo" data-item="tamara">Tâmara</a></li><li><a href="#item-laranja" data-label="Catálogo" data-item="laranja">Laranja</a></li><li><a href="#item-limao" data-label="Catálogo" data-item="limao">Limão</a></li><li><a href="#item-abacaxi" data-label="Catálogo" data-item="abacaxi">Abacaxi</a></li><li><a href="#item-alface" data-label="Catálogo" data-item="alface">Alface</a></li><li><a href="#item-brocolis" data-label="Catálogo" data-item="brocolis">Brócolis</a></li><li><a href="#item-couve" data-label="Catálogo" data-item="couve">Couve</a></li><li><a href="#item-tomate" data-label="Catálogo" data-item="tomate">Tomate</a></li><li><a href="#item-cenoura" data-label="Catálogo" data-item="cenoura">Cenoura</a></li><li><a href="#item-cebola" data-label="Catálogo" data-item="cebola">Cebola</a></li><li><a href="#item-pimentao" data-label="Catálogo" data-item="pimentao">Pimentão</a></li><li><a href="#item-ovos" data-label="Catálogo" data-item="ovos">Ovos</a></li><li class="pills__more"><a href="#catalogo" data-label="Catálogo">ver catálogo completo <span aria-hidden="true">→</span></a></li>
+            <li><a href="#item-morango" data-item="morango">Morango</a></li><li><a href="#item-maca" data-item="maca">Maçã</a></li><li><a href="#item-manga" data-item="manga">Manga</a></li><li><a href="#item-banana" data-item="banana">Banana</a></li><li><a href="#item-uva" data-item="uva">Uva</a></li><li><a href="#item-mamao" data-item="mamao">Mamão</a></li><li><a href="#item-abacate" data-item="abacate">Abacate</a></li><li><a href="#item-tamara" data-item="tamara">Tâmara</a></li><li><a href="#item-laranja" data-item="laranja">Laranja</a></li><li><a href="#item-limao" data-item="limao">Limão</a></li><li><a href="#item-abacaxi" data-item="abacaxi">Abacaxi</a></li><li><a href="#item-alface" data-item="alface">Alface</a></li><li><a href="#item-brocolis" data-item="brocolis">Brócolis</a></li><li><a href="#item-couve" data-item="couve">Couve</a></li><li><a href="#item-tomate" data-item="tomate">Tomate</a></li><li><a href="#item-cenoura" data-item="cenoura">Cenoura</a></li><li><a href="#item-cebola" data-item="cebola">Cebola</a></li><li><a href="#item-pimentao" data-item="pimentao">Pimentão</a></li><li><a href="#item-ovos" data-item="ovos">Ovos</a></li><li class="pills__more"><a href="#catalogo">ver catálogo completo <span aria-hidden="true">→</span></a></li>
           </ul>
         </div>
       </section>
