@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casa do Morango | Hortifrúti no Centro de Araguaína - TO</title>
+    <meta name="description" content="Casa do Morango: morangos selecionados, frutas, verduras, legumes e ovos na Rua 21 de Abril, 80, em frente ao Mercado Municipal de Araguaína - TO. Segunda a sábado, das 7h às 19h30. Peça pelo WhatsApp." />
+    <meta name="theme-color" content="#A50F14" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Casa do Morango | Araguaína - TO" />
+    <meta property="og:description" content="Morangos, frutas e verduras selecionadas. Rua 21 de Abril, 80, em frente ao Mercado Municipal." />
+    <meta property="og:image" content="/img/og.jpg" />
+    <link rel="icon" type="image/png" href="/logo/favicon-64.png" />
+    <link rel="apple-touch-icon" href="/logo/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="preload" as="image" href="/img/bandejas.webp" />
+    <script>
+      // primeiro acesso da sessão: mostra a abertura (marcado antes de pintar para não piscar)
+      document.documentElement.classList.add('js');
+      if (!sessionStorage.getItem('cm-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('has-intro');
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- Abertura -->
+    <div class="intro" aria-hidden="true">
+      <div class="intro__inner">
+        <img class="intro__sym" src="/logo/simbolo.webp" alt="" width="420" height="553" />
+        <div class="intro__word">
+          <span class="intro__line"><img src="/logo/letreiro-1.webp" alt="" width="520" height="77" /></span>
+          <span class="intro__line"><img src="/logo/letreiro-2.webp" alt="" width="720" height="101" /></span>
+        </div>
+        <div class="intro__load"><span class="intro__bar"><i></i></span><span class="intro__count">000</span></div>
+      </div>
+      <div class="intro__wipe"></div>
+    </div>
+
+    <!-- Cortina entre seções -->
+    <div class="curtain" aria-hidden="true">
+      <div class="curtain__panel">
+        <img class="curtain__sym" src="/logo/simbolo.webp" alt="" width="420" height="553" />
+        <span class="curtain__label"></span>
+      </div>
+    </div>
+
+    <div class="progress" aria-hidden="true"><i></i></div>
+
+    <header class="hdr" data-hdr>
+      <div class="hdr__in">
+        <a class="hdr__logo" href="#inicio" aria-label="Casa do Morango, voltar ao início">
+          <img class="hdr__logo-dark" src="/logo/horizontal.webp" alt="Casa do Morango" width="640" height="210" />
+          <img class="hdr__logo-light" src="/logo/horizontal-clara.webp" alt="" width="640" height="217" />
+        </a>
+        <nav class="hdr__nav" aria-label="Seções">
+          <a href="#produtos" data-label="Produtos">Produtos</a>
+          <a href="#sobre" data-label="A casa">A casa</a>
+          <a href="#como-pedir" data-label="Como pedir">Como pedir</a>
+          <a href="#visite" data-label="Visite">Visite</a>
+        </nav>
+        <a class="btn btn--red hdr__cta" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango!%20Gostaria%20de%20fazer%20um%20pedido%20%F0%9F%8D%93" target="_blank" rel="noopener" data-wa>
+          <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir agora</span>
+        </a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu" data-burger>
+          <span class="burger__txt">Menu</span><span class="burger__lines"><i></i><i></i></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Menu em tela cheia -->
+    <div class="menu" id="menu" aria-hidden="true" data-menu>
+      <div class="menu__in">
+        <nav class="menu__nav" aria-label="Menu">
+          <a href="#produtos" data-label="Produtos"><small>01</small><span>Produtos</span></a>
+          <a href="#sobre" data-label="A casa"><small>02</small><span>A casa</span></a>
+          <a href="#como-pedir" data-label="Como pedir"><small>03</small><span>Como pedir</span></a>
+          <a href="#visite" data-label="Visite"><small>04</small><span>Visite</span></a>
+        </nav>
+        <div class="menu__info">
+          <p><strong>Rua 21 de Abril, 80</strong><br />Centro, em frente ao Mercado Municipal<br />Araguaína - TO</p>
+          <p>Segunda a sábado<br /><strong>7h às 19h30</strong></p>
+          <a class="btn btn--light" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango!%20Gostaria%20de%20fazer%20um%20pedido%20%F0%9F%8D%93" target="_blank" rel="noopener" data-wa>
+            <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>(63) 99259-4750</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <main id="conteudo">
+      <!-- 1. Topo -->
+      <section class="hero" id="inicio">
+        <div class="wrap hero__grid">
+          <div class="hero__text">
+            <h1 class="hero__title">
+              <span class="line"><span>O morango</span></span>
+              <span class="line"><span>mais <em>fresquinho</em></span></span>
+              <span class="line"><span>de Araguaína.</span></span>
+            </h1>
+            <div class="hero__btns" data-hero-in>
+              <a class="btn btn--red btn--lg" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango!%20Gostaria%20de%20fazer%20um%20pedido%20%F0%9F%8D%93" target="_blank" rel="noopener" data-wa>
+                <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Fazer pedido no WhatsApp</span>
+              </a>
+              <a class="btn btn--line btn--lg" href="#produtos" data-label="Produtos"><span>Ver produtos</span></a>
+            </div>
+            <ul class="facts" data-hero-in>
+              <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock" /></svg><span><strong>Seg a sáb</strong>7h às 19h30</span></li>
+              <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin" /></svg><span><strong>Rua 21 de Abril, 80</strong>Centro</span></li>
+              <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-card" /></svg><span><strong>Dinheiro, cartão</strong>e PIX</span></li>
+            </ul>
+          </div>
+          <div class="hero__media">
+            <div class="hero__frame" data-hero-frame>
+              <img src="/img/bandejas.webp" srcset="/img/bandejas-sm.webp 540w, /img/bandejas.webp 1080w" sizes="(max-width: 900px) 92vw, 46vw" alt="Morangos vermelhos e graúdos em bandejas" width="1080" height="788" fetchpriority="high" />
+            </div>
+            <div class="hero__tag" data-hero-tag>
+              <img src="/logo/simbolo.webp" alt="" width="420" height="553" />
+              <span><strong>Morango é o nosso</strong>carro-chefe</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Produtos -->
+      <section class="sec products" id="produtos">
+        <div class="wrap">
+          <div class="sec__head">
+            <h2 class="h2" data-reveal>Do campo direto para a <em>sua mesa</em></h2>
+          </div>
+          <div class="products__grid">
+            <article class="pcard pcard--feature" data-reveal>
+              <div class="pcard__media" data-clip>
+                <img src="/img/colheita.webp" srcset="/img/colheita-sm.webp 640w, /img/colheita.webp 1200w" sizes="(max-width: 900px) 92vw, 46vw" alt="Caixa cheia de morangos recém-colhidos na plantação" width="1200" height="541"/>
+              </div>
+              <div class="pcard__body">
+                <span class="chip">Carro-chefe</span>
+                <h3 class="h3">Morangos selecionados</h3>
+                <p>Vermelhos, doces e escolhidos com cuidado. Para comer puro, em sobremesas, vitaminas e bombons.</p>
+              </div>
+            </article>
+            <article class="pcard" data-reveal>
+              <span class="pcard__ico"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-fruit" /></svg></span>
+              <h3 class="h3">Frutas da estação</h3>
+              <p>Maçã, manga, banana, uva, mamão, abacate, tâmara e o que estiver no melhor ponto da safra.</p>
+            </article>
+            <article class="pcard" data-reveal>
+              <span class="pcard__ico"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-leaf" /></svg></span>
+              <h3 class="h3">Verduras e legumes</h3>
+              <p>Alface, couve, brócolis, tomate, cenoura, cebola, pimentão e cheiro-verde para o dia a dia.</p>
+            </article>
+            <article class="pcard" data-reveal>
+              <span class="pcard__ico"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-egg" /></svg></span>
+              <h3 class="h3">Ovos e o básico</h3>
+              <p>Ovos em cartela e aquilo que não pode faltar na cozinha da sua família.</p>
+            </article>
+          </div>
+          <ul class="pills" aria-label="Alguns dos produtos" data-pills>
+            <li><a href="#item-morango" data-label="Catálogo" data-item="morango">Morango</a></li><li><a href="#item-maca" data-label="Catálogo" data-item="maca">Maçã</a></li><li><a href="#item-manga" data-label="Catálogo" data-item="manga">Manga</a></li><li><a href="#item-banana" data-label="Catálogo" data-item="banana">Banana</a></li><li><a href="#item-uva" data-label="Catálogo" data-item="uva">Uva</a></li><li><a href="#item-mamao" data-label="Catálogo" data-item="mamao">Mamão</a></li><li><a href="#item-abacate" data-label="Catálogo" data-item="abacate">Abacate</a></li><li><a href="#item-tamara" data-label="Catálogo" data-item="tamara">Tâmara</a></li><li><a href="#item-laranja" data-label="Catálogo" data-item="laranja">Laranja</a></li><li><a href="#item-limao" data-label="Catálogo" data-item="limao">Limão</a></li><li><a href="#item-abacaxi" data-label="Catálogo" data-item="abacaxi">Abacaxi</a></li><li><a href="#item-alface" data-label="Catálogo" data-item="alface">Alface</a></li><li><a href="#item-brocolis" data-label="Catálogo" data-item="brocolis">Brócolis</a></li><li><a href="#item-couve" data-label="Catálogo" data-item="couve">Couve</a></li><li><a href="#item-tomate" data-label="Catálogo" data-item="tomate">Tomate</a></li><li><a href="#item-cenoura" data-label="Catálogo" data-item="cenoura">Cenoura</a></li><li><a href="#item-cebola" data-label="Catálogo" data-item="cebola">Cebola</a></li><li><a href="#item-pimentao" data-label="Catálogo" data-item="pimentao">Pimentão</a></li><li><a href="#item-ovos" data-label="Catálogo" data-item="ovos">Ovos</a></li><li class="pills__more"><a href="#catalogo" data-label="Catálogo">ver catálogo completo <span aria-hidden="true">→</span></a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 3. A casa -->
+      <section class="sec about" id="sobre">
+        <div class="wrap about__grid">
+          <div class="about__media" data-clip>
+            <img src="/img/fachada.webp" srcset="/img/fachada-sm.webp 600w, /img/fachada.webp 960w" sizes="(max-width: 900px) 92vw, 44vw" alt="Fachada da Casa do Morango à noite, com o letreiro iluminado e a loja aberta" width="960" height="1234" />
+          </div>
+          <div class="about__text">
+            <h2 class="h2" data-reveal>Uma casa feita de <em>morango</em>, e de tudo que é fresco.</h2>
+            <p data-reveal>A Casa do Morango é o hortifrúti do Centro de Araguaína que tem o morango como carro-chefe. Na Rua 21 de Abril, bem em frente ao Mercado Municipal, você encontra frutas, verduras, legumes e ovos para o dia a dia da sua família.</p>
+            <p data-reveal>Tortas, cheesecakes, vitaminas e bombons ficam ainda melhores com morango de verdade. A gente separa os mais bonitos para a sua receita.</p>
+            <ul class="ticks" data-reveal>
+              <li>Atendimento de segunda a sábado</li>
+              <li>Pedido pelo WhatsApp, sem fila</li>
+              <li>Dinheiro, cartão e PIX</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Como pedir -->
+      <section class="sec steps" id="como-pedir">
+        <div class="wrap">
+          <div class="sec__head sec__head--center">
+            <h2 class="h2" data-reveal>Como fazer seu <em>pedido</em></h2>
+          </div>
+          <div class="steps__track" data-steps>
+            <svg class="steps__line" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 C 160 2, 330 38, 500 20 S 840 2, 1000 20" pathLength="1" data-steps-path /></svg>
+            <ol class="steps__list">
+              <li class="step" data-step>
+                <span class="step__n">1</span>
+                <h3 class="h3">Chame no WhatsApp</h3>
+                <p>Fale direto com a nossa equipe pelo (63) 99259-4750.</p>
+              </li>
+              <li class="step" data-step>
+                <span class="step__n">2</span>
+                <h3 class="h3">Mande sua lista</h3>
+                <p>Diga o que precisa: morangos, frutas, verduras, legumes e ovos.</p>
+              </li>
+              <li class="step" data-step>
+                <span class="step__n">3</span>
+                <h3 class="h3">Receba ou retire</h3>
+                <p>Separamos tudo com cuidado. Você combina a entrega ou busca na loja.</p>
+              </li>
+            </ol>
+          </div>
+          <div class="steps__btns" data-reveal>
+            <a class="btn btn--red btn--lg" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango!%20Gostaria%20de%20fazer%20um%20pedido%20%F0%9F%8D%93" target="_blank" rel="noopener" data-wa>
+              <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Começar meu pedido</span>
+            </a>
+            <a class="btn btn--line btn--lg" href="https://wa.me/c/556392594750" target="_blank" rel="noopener"><span>Ver catálogo no WhatsApp</span></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Visite -->
+      <section class="sec visit" id="visite">
+        <div class="wrap">
+          <div class="sec__head">
+            <h2 class="h2" data-reveal>Estamos te <em>esperando</em></h2>
+          </div>
+          <div class="visit__grid">
+            <article class="vcard vcard--addr" data-reveal>
+              <span class="vcard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin" /></svg></span>
+              <h3 class="h3">Endereço</h3>
+              <p class="vcard__big">Rua 21 de Abril, 80</p>
+              <p>Centro, em frente ao Mercado Municipal<br />Araguaína - TO</p>
+              <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Casa%20do%20Morango%2C%20Rua%2021%20de%20Abril%2C%2080%2C%20Centro%2C%20Aragua%C3%ADna%20-%20TO" target="_blank" rel="noopener">Abrir no Google Maps <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="vcard" data-reveal>
+              <span class="vcard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock" /></svg></span>
+              <h3 class="h3">Horário</h3>
+              <table class="hours" data-hours>
+                <caption class="sr">Horário de funcionamento</caption>
+                <tbody>
+                  <tr data-day="1"><th scope="row">Segunda</th><td>7h às 19h30</td></tr>
+                  <tr data-day="2"><th scope="row">Terça</th><td>7h às 19h30</td></tr>
+                  <tr data-day="3"><th scope="row">Quarta</th><td>7h às 19h30</td></tr>
+                  <tr data-day="4"><th scope="row">Quinta</th><td>7h às 19h30</td></tr>
+                  <tr data-day="5"><th scope="row">Sexta</th><td>7h às 19h30</td></tr>
+                  <tr data-day="6"><th scope="row">Sábado</th><td>7h às 19h30</td></tr>
+                  <tr data-day="0" class="is-closed"><th scope="row">Domingo</th><td>Fechado</td></tr>
+                </tbody>
+              </table>
+            </article>
+            <article class="vcard" data-reveal>
+              <span class="vcard__ico"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg></span>
+              <h3 class="h3">WhatsApp</h3>
+              <p class="vcard__big">(63) 99259-4750</p>
+              <p>Pedidos, dúvidas e a lista da semana.<br />Pagamento em dinheiro, cartão ou PIX.</p>
+              <a class="link" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango!%20Gostaria%20de%20fazer%20um%20pedido%20%F0%9F%8D%93" target="_blank" rel="noopener" data-wa>Enviar mensagem <span aria-hidden="true">→</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Chamada final -->
+      <section class="cta">
+        <div class="wrap cta__in">
+          <img class="cta__sym" src="/logo/simbolo.webp" alt="" width="420" height="553" data-cta-sym />
+          <h2 class="cta__title" data-reveal>Bateu vontade de <em>morango</em>?</h2>
+          <p data-reveal>Faça seu pedido agora e garanta os mais fresquinhos do dia.</p>
+          <a class="btn btn--light btn--lg" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango!%20Gostaria%20de%20fazer%20um%20pedido%20%F0%9F%8D%93" target="_blank" rel="noopener" data-wa data-reveal>
+            <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Chamar no WhatsApp</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="ftr">
+      <div class="wrap ftr__grid">
+        <div class="ftr__brand">
+          <img src="/logo/horizontal-clara.webp" alt="Casa do Morango" width="640" height="217" loading="lazy" />
+          <p>Frutas e verduras selecionadas.</p>
+        </div>
+        <div>
+          <h3 class="ftr__h">Visite</h3>
+          <p>Rua 21 de Abril, 80, Centro<br />Em frente ao Mercado Municipal<br />Araguaína - TO</p>
+        </div>
+        <div>
+          <h3 class="ftr__h">Horário</h3>
+          <p>Segunda a sábado, 7h às 19h30<br />Domingo fechado</p>
+        </div>
+        <div>
+          <h3 class="ftr__h">Fale com a gente</h3>
+          <p><a href="https://wa.me/5563992594750" target="_blank" rel="noopener">(63) 99259-4750</a><br /><a href="https://www.instagram.com/casadomorango2/" target="_blank" rel="noopener">@casadomorango2</a></p>
+        </div>
+      </div>
+      <div class="wrap ftr__base">
+        <p>© <span data-year>2026</span> Casa do Morango. Todos os direitos reservados.</p>
+        <a class="ftr__ds" href="https://diedrichssystems.com" target="_blank" rel="noopener"><span>Desenvolvido por</span><img src="/logo/diedrichs.webp" alt="Diedrichs Systems" width="240" height="92" loading="lazy" /></a>
+      </div>
+    </footer>
+
+
+    <!-- Catálogo: tela própria, aberta pela lista de Produtos -->
+    <div class="catview" id="catalogo" role="dialog" aria-modal="true" aria-labelledby="catview-title" aria-hidden="true" data-catview>
+      <div class="catview__bar">
+        <div class="wrap catview__bar-in">
+          <img class="catview__logo" src="/logo/horizontal.webp" alt="Casa do Morango" width="640" height="210" />
+          <button type="button" class="catview__back" data-catview-close><span aria-hidden="true">←</span> Voltar ao site</button>
+        </div>
+      </div>
+      <div class="catview__scroll" data-catview-scroll data-lenis-prevent>
+        <div class="wrap catview__in">
+          <div class="catview__head">
+            <h2 class="h2" id="catview-title">Nosso <em>catálogo</em></h2>
+          </div>
+          <div class="filters" role="group" aria-label="Filtrar catálogo" data-filters>
+            <button type="button" class="is-on" data-filter="todos" aria-pressed="true">Todos</button>
+            <button type="button" data-filter="frutas" aria-pressed="false">Frutas</button>
+            <button type="button" data-filter="verduras" aria-pressed="false">Verduras e legumes</button>
+            <button type="button" data-filter="outros" aria-pressed="false">Do dia a dia</button>
+          </div>
+          <ul class="items" data-items>
+            <li class="item" id="item-morango" data-cat="frutas">
+              <div class="item__img"><img src="/img/catalogo/morango.webp" srcset="/img/catalogo/morango-sm.webp 320w, /img/catalogo/morango.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Morango" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Fruta</span>
+                <h3 class="item__name">Morango</h3>
+                <p>O carro-chefe da casa</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Morango%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Morango pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-maca" data-cat="frutas">
+              <div class="item__img"><img src="/img/catalogo/maca.webp" srcset="/img/catalogo/maca-sm.webp 320w, /img/catalogo/maca.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Maçã" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Fruta</span>
+                <h3 class="item__name">Maçã</h3>
+                <p>Nacional, doce e crocante</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Ma%C3%A7%C3%A3%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Maçã pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-manga" data-cat="frutas">
+              <div class="item__img"><img src="/img/catalogo/manga.webp" srcset="/img/catalogo/manga-sm.webp 320w, /img/catalogo/manga.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Manga" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Fruta</span>
+                <h3 class="item__name">Manga</h3>
+                <p>Palmer, no ponto certo</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Manga%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Manga pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-banana" data-cat="frutas">
+              <div class="item__img"><img src="/img/catalogo/banana.webp" srcset="/img/catalogo/banana-sm.webp 320w, /img/catalogo/banana.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Banana" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Fruta</span>
+                <h3 class="item__name">Banana</h3>
+                <p>Prata, para o dia a dia</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Banana%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Banana pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-uva" data-cat="frutas">
+              <div class="item__img"><img src="/img/catalogo/uva.webp" srcset="/img/catalogo/uva-sm.webp 320w, /img/catalogo/uva.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Uva" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Fruta</span>
+                <h3 class="item__name">Uva</h3>
+                <p>Roxa e verde, conforme a safra</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Uva%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Uva pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-mamao" data-cat="frutas">
+              <div class="item__img"><img src="/img/catalogo/mamao.webp" srcset="/img/catalogo/mamao-sm.webp 320w, /img/catalogo/mamao.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Mamão" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Fruta</span>
+                <h3 class="item__name">Mamão</h3>
+                <p>Papaia docinho</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Mam%C3%A3o%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Mamão pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-abacate" data-cat="frutas">
+              <div class="item__img"><img src="/img/catalogo/abacate.webp" srcset="/img/catalogo/abacate-sm.webp 320w, /img/catalogo/abacate.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Abacate" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Fruta</span>
+                <h3 class="item__name">Abacate</h3>
+                <p>Para vitamina e salada</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Abacate%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Abacate pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-tamara" data-cat="frutas">
+              <div class="item__img"><img src="/img/catalogo/tamara.webp" srcset="/img/catalogo/tamara-sm.webp 320w, /img/catalogo/tamara.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Tâmara" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Fruta</span>
+                <h3 class="item__name">Tâmara</h3>
+                <p>Tâmara palito</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20T%C3%A2mara%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Tâmara pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-laranja" data-cat="frutas">
+              <div class="item__img"><img src="/img/catalogo/laranja.webp" srcset="/img/catalogo/laranja-sm.webp 320w, /img/catalogo/laranja.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Laranja" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Fruta</span>
+                <h3 class="item__name">Laranja</h3>
+                <p>Para suco e sobremesa</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Laranja%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Laranja pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-limao" data-cat="frutas">
+              <div class="item__img"><img src="/img/catalogo/limao.webp" srcset="/img/catalogo/limao-sm.webp 320w, /img/catalogo/limao.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Limão" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Fruta</span>
+                <h3 class="item__name">Limão</h3>
+                <p>Taiti, suculento</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Lim%C3%A3o%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Limão pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-abacaxi" data-cat="frutas">
+              <div class="item__img"><img src="/img/catalogo/abacaxi.webp" srcset="/img/catalogo/abacaxi-sm.webp 320w, /img/catalogo/abacaxi.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Abacaxi" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Fruta</span>
+                <h3 class="item__name">Abacaxi</h3>
+                <p>Doce, da estação</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Abacaxi%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Abacaxi pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-alface" data-cat="verduras">
+              <div class="item__img"><img src="/img/catalogo/alface.webp" srcset="/img/catalogo/alface-sm.webp 320w, /img/catalogo/alface.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Alface" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Verdura e legume</span>
+                <h3 class="item__name">Alface</h3>
+                <p>Americana, crocante</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Alface%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Alface pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-brocolis" data-cat="verduras">
+              <div class="item__img"><img src="/img/catalogo/brocolis.webp" srcset="/img/catalogo/brocolis-sm.webp 320w, /img/catalogo/brocolis.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Brócolis" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Verdura e legume</span>
+                <h3 class="item__name">Brócolis</h3>
+                <p>Fresco, em maço</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Br%C3%B3colis%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Brócolis pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-couve" data-cat="verduras">
+              <div class="item__img"><img src="/img/catalogo/couve.webp" srcset="/img/catalogo/couve-sm.webp 320w, /img/catalogo/couve.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Couve" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Verdura e legume</span>
+                <h3 class="item__name">Couve</h3>
+                <p>Manteiga, em maço</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Couve%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Couve pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-tomate" data-cat="verduras">
+              <div class="item__img"><img src="/img/catalogo/tomate.webp" srcset="/img/catalogo/tomate-sm.webp 320w, /img/catalogo/tomate.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Tomate" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Verdura e legume</span>
+                <h3 class="item__name">Tomate</h3>
+                <p>Para salada e molho</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Tomate%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Tomate pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-cenoura" data-cat="verduras">
+              <div class="item__img"><img src="/img/catalogo/cenoura.webp" srcset="/img/catalogo/cenoura-sm.webp 320w, /img/catalogo/cenoura.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Cenoura" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Verdura e legume</span>
+                <h3 class="item__name">Cenoura</h3>
+                <p>Para o dia a dia</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Cenoura%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Cenoura pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-cebola" data-cat="verduras">
+              <div class="item__img"><img src="/img/catalogo/cebola.webp" srcset="/img/catalogo/cebola-sm.webp 320w, /img/catalogo/cebola.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Cebola" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Verdura e legume</span>
+                <h3 class="item__name">Cebola</h3>
+                <p>Amarela e roxa</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Cebola%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Cebola pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-pimentao" data-cat="verduras">
+              <div class="item__img"><img src="/img/catalogo/pimentao.webp" srcset="/img/catalogo/pimentao-sm.webp 320w, /img/catalogo/pimentao.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Pimentão" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Verdura e legume</span>
+                <h3 class="item__name">Pimentão</h3>
+                <p>Verde, vermelho e amarelo</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Piment%C3%A3o%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Pimentão pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+            <li class="item" id="item-ovos" data-cat="outros">
+              <div class="item__img"><img src="/img/catalogo/ovos.webp" srcset="/img/catalogo/ovos-sm.webp 320w, /img/catalogo/ovos.webp 640w" sizes="(max-width: 600px) 46vw, (max-width: 1080px) 30vw, 290px" alt="Ovos" width="640" height="640" loading="lazy" /></div>
+              <div class="item__body">
+                <span class="item__cat">Do dia a dia</span>
+                <h3 class="item__name">Ovos</h3>
+                <p>Cartela com 20 ovos</p>
+                <a class="item__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango%21%20Quero%20pedir%3A%20Ovos%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Pedir Ovos pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir</span></a>
+              </div>
+            </li>
+          </ul>
+          <div class="catview__foot">
+            <p class="catalog__note">Fotos ilustrativas. Consulte a disponibilidade do dia pelo WhatsApp.</p>
+            <a class="btn btn--red btn--lg" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango!%20Gostaria%20de%20fazer%20um%20pedido%20%F0%9F%8D%93" target="_blank" rel="noopener">
+              <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Mandar minha lista</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WhatsApp flutuante -->
+    <div class="wa" data-wa-float>
+      <span class="wa__tip">Faça seu pedido!</span>
+      <a class="wa__btn" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango!%20Gostaria%20de%20fazer%20um%20pedido%20%F0%9F%8D%93" target="_blank" rel="noopener" aria-label="Fazer pedido pelo WhatsApp">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg>
+      </a>
+    </div>
+
+    <!-- Ícones -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16.04 3C9.06 3 3.4 8.66 3.4 15.64c0 2.23.58 4.4 1.690 6.32L3.3 28.5l6.72-1.76a12.6 12.6 0 0 0 6.02 1.53h.01c6.98 0 12.64-5.66 12.64-12.64 0-3.38-1.32-6.550-3.71-8.94A12.56 12.56 0 0 0 16.04 3Zm0 23.13h-.01c-1.89 0-3.74-.51-5.36-1.46l-.38-.23-3.99 1.05 1.07-3.89-.25-.4a10.45 10.45 0 0 1-1.6-5.57c0-5.79 4.71-10.5 10.52-10.5 2.81 0 5.45 1.1 7.43 3.08a10.430 10.430 0 0 1 3.07 7.43c0 5.8-4.71 10.5-10.5 10.5Zm5.76-7.86c-.32-.16-1.87-.92-2.16-1.03-.29-.1-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.69.08-.32-.16-1.33-.49-2.54-1.56-.94-.84-1.57-1.87-1.75-2.19-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.53-.71-.54h-.61c-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.52 1.8.66.76.24 1.44.21 1.99.13.61-.09 1.87-.76 2.13-1.5.26-.74.26-1.37.18-1.5-.08-.13-.29-.21-.61-.37Z"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+      <symbol id="i-card" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></g></symbol>
+      <symbol id="i-fruit" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 15c-4-3-12-2-14 6-2 9 4 19 9 19 2 0 3-1 5-1s3 1 5 1c5 0 11-10 9-19-2-8-10-9-14-6Z"/><path d="M24 15c0-4 1-7 4-9"/><path d="M26 11c3-3 7-3 9-2-1 3-5 5-9 4"/></g></symbol>
+      <symbol id="i-leaf" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 38C8 20 20 9 39 9c1 19-10 30-27 29Z"/><path d="M10 38 30 18M18 30h8M22 26v-8"/></g></symbol>
+      <symbol id="i-egg" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 7c-7 0-13 12-13 21a13 13 0 0 0 26 0c0-9-6-21-13-21Z"/><path d="M18 30a6 6 0 0 0 5 5"/></g></symbol>
+    </svg>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
