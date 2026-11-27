@@ -6,24 +6,53 @@
     <title>Casa do Morango | Hortifrúti no Centro de Araguaína - TO</title>
     <meta name="description" content="Casa do Morango: morangos selecionados, frutas, verduras, legumes e ovos na Rua 21 de Abril, 80, em frente ao Mercado Municipal de Araguaína - TO. Segunda a sábado, das 7h às 19h30. Peça pelo WhatsApp." />
     <meta name="theme-color" content="#A50F14" />
+    <link rel="canonical" href="%SITE_URL%/" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Casa do Morango" />
+    <meta property="og:url" content="%SITE_URL%/" />
     <meta property="og:title" content="Casa do Morango | Araguaína - TO" />
     <meta property="og:description" content="Morangos, frutas e verduras selecionadas. Rua 21 de Abril, 80, em frente ao Mercado Municipal." />
-    <meta property="og:image" content="/img/og.jpg" />
+    <meta property="og:image" content="%SITE_URL%/img/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "GroceryStore",
+        "name": "Casa do Morango",
+        "description": "Hortifrúti com morangos selecionados, frutas, verduras, legumes e ovos.",
+        "telephone": "+55 63 99259-4750",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua 21 de Abril, 80, Centro",
+          "addressLocality": "Araguaína",
+          "addressRegion": "TO",
+          "addressCountry": "BR"
+        },
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "07:00",
+          "closes": "19:30"
+        }],
+        "paymentAccepted": "Dinheiro, cartão, PIX",
+        "sameAs": ["https://www.instagram.com/casadomorango2/"]
+      }
+    </script>
     <link rel="icon" type="image/png" href="/logo/favicon-64.png" />
     <link rel="apple-touch-icon" href="/logo/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/src/styles.css" />
     <link rel="preload" as="image" href="/img/bandejas.webp" imagesrcset="/img/bandejas-sm.webp 540w, /img/bandejas.webp 1080w" imagesizes="(max-width: 900px) 92vw, 46vw" />
     <script>
-      try {
-        if (!location.hash && !sessionStorage.getItem('cm-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          document.documentElement.classList.add('has-intro');
-          sessionStorage.setItem('cm-intro', '1');
-        }
-      } catch { /* Com armazenamento indisponível, abre direto na página inicial. */ }
+      // toda entrada no site mostra a abertura (marcado antes de pintar para não piscar);
+      // quem chega por link direto para uma parte da página (#...) vai direto ao ponto
+      document.documentElement.classList.add('js');
+      if (!location.hash && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('has-intro');
     </script>
   </head>
   <body>
@@ -37,6 +66,17 @@
           <span class="intro__line"><img src="/logo/letreiro-1.webp" alt="" width="520" height="77" /></span>
           <span class="intro__line"><img src="/logo/letreiro-2.webp" alt="" width="720" height="101" /></span>
         </div>
+        <div class="intro__load"><span class="intro__bar"><i></i></span><span class="intro__count">000</span></div>
+      </div>
+    </div>
+
+    <!-- Cortina entre seções -->
+    <div class="curtain" aria-hidden="true">
+      <div class="curtain__layer curtain__layer--a"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="curtain__layer curtain__layer--b"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="curtain__content">
+        <img class="curtain__sym" src="/logo/simbolo.webp" alt="" width="420" height="553" />
+        <span class="curtain__label"></span>
       </div>
     </div>
 
@@ -49,10 +89,10 @@
           <img class="hdr__logo-light" src="/logo/horizontal-clara.webp" alt="" width="640" height="217" />
         </a>
         <nav class="hdr__nav" aria-label="Seções">
-          <a href="#produtos">Produtos</a>
-          <a href="#sobre">A casa</a>
-          <a href="#como-pedir">Como pedir</a>
-          <a href="#visite">Visite</a>
+          <a href="#produtos" data-label="Produtos">Produtos</a>
+          <a href="#sobre" data-label="A casa">A casa</a>
+          <a href="#como-pedir" data-label="Como pedir">Como pedir</a>
+          <a href="#visite" data-label="Visite">Visite</a>
         </nav>
         <a class="btn btn--red hdr__cta" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango!%20Gostaria%20de%20fazer%20um%20pedido%20%F0%9F%8D%93" target="_blank" rel="noopener" data-wa>
           <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Pedir agora</span>
@@ -67,10 +107,10 @@
     <div class="menu" id="menu" aria-hidden="true" data-menu>
       <div class="menu__in">
         <nav class="menu__nav" aria-label="Menu">
-          <a href="#produtos"><small>01</small><span>Produtos</span></a>
-          <a href="#sobre"><small>02</small><span>A casa</span></a>
-          <a href="#como-pedir"><small>03</small><span>Como pedir</span></a>
-          <a href="#visite"><small>04</small><span>Visite</span></a>
+          <a href="#produtos" data-label="Produtos"><small>01</small><span>Produtos</span></a>
+          <a href="#sobre" data-label="A casa"><small>02</small><span>A casa</span></a>
+          <a href="#como-pedir" data-label="Como pedir"><small>03</small><span>Como pedir</span></a>
+          <a href="#visite" data-label="Visite"><small>04</small><span>Visite</span></a>
         </nav>
         <div class="menu__info">
           <p><strong>Rua 21 de Abril, 80</strong><br />Centro, em frente ao Mercado Municipal<br />Araguaína - TO</p>
@@ -92,25 +132,21 @@
               <span class="line"><span>mais <em>fresquinho</em></span></span>
               <span class="line"><span>de Araguaína.</span></span>
             </h1>
-            <div class="hero__btns">
+            <div class="hero__btns" data-hero-in>
               <a class="btn btn--red btn--lg" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango!%20Gostaria%20de%20fazer%20um%20pedido%20%F0%9F%8D%93" target="_blank" rel="noopener" data-wa>
                 <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Fazer pedido no WhatsApp</span>
               </a>
-              <a class="btn btn--line btn--lg" href="#produtos"><span>Ver produtos</span></a>
+              <a class="btn btn--line btn--lg" href="#produtos" data-label="Produtos"><span>Ver produtos</span></a>
             </div>
-            <ul class="facts">
+            <ul class="facts" data-hero-in>
               <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock" /></svg><span><strong>Seg a sáb</strong>7h às 19h30</span></li>
               <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin" /></svg><span><strong>Rua 21 de Abril, 80</strong>Centro</span></li>
               <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-card" /></svg><span><strong>Dinheiro, cartão</strong>e PIX</span></li>
             </ul>
           </div>
           <div class="hero__media">
-            <div class="hero__frame">
+            <div class="hero__frame" data-hero-frame>
               <img src="/img/bandejas.webp" srcset="/img/bandejas-sm.webp 540w, /img/bandejas.webp 1080w" sizes="(max-width: 900px) 92vw, 46vw" alt="Morangos vermelhos e graúdos em bandejas" width="1080" height="788" fetchpriority="high" />
-            </div>
-            <div class="hero__tag">
-              <img src="/logo/simbolo.webp" alt="" width="420" height="553" />
-              <span><strong>Morango é o nosso</strong>carro-chefe</span>
             </div>
           </div>
         </div>
@@ -134,28 +170,43 @@
               </div>
             </article>
             <article class="pcard" data-reveal>
-              <span class="pcard__ico"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-fruit" /></svg></span>
               <h3 class="h3">Frutas da estação</h3>
               <p>Maçã, manga, banana, uva, mamão, abacate, tâmara e o que estiver no melhor ponto da safra.</p>
             </article>
             <article class="pcard" data-reveal>
-              <span class="pcard__ico"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-leaf" /></svg></span>
               <h3 class="h3">Verduras e legumes</h3>
               <p>Alface, couve, brócolis, tomate, cenoura, cebola, pimentão e cheiro-verde para o dia a dia.</p>
             </article>
             <article class="pcard" data-reveal>
-              <span class="pcard__ico"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-egg" /></svg></span>
               <h3 class="h3">Ovos e o básico</h3>
               <p>Ovos em cartela e aquilo que não pode faltar na cozinha da sua família.</p>
             </article>
           </div>
-          <ul class="pills" aria-label="Alguns dos produtos" data-pills>
-            <li><a href="#item-morango" data-item="morango">Morango</a></li><li><a href="#item-maca" data-item="maca">Maçã</a></li><li><a href="#item-manga" data-item="manga">Manga</a></li><li><a href="#item-banana" data-item="banana">Banana</a></li><li><a href="#item-uva" data-item="uva">Uva</a></li><li><a href="#item-mamao" data-item="mamao">Mamão</a></li><li><a href="#item-abacate" data-item="abacate">Abacate</a></li><li><a href="#item-tamara" data-item="tamara">Tâmara</a></li><li><a href="#item-laranja" data-item="laranja">Laranja</a></li><li><a href="#item-limao" data-item="limao">Limão</a></li><li><a href="#item-abacaxi" data-item="abacaxi">Abacaxi</a></li><li><a href="#item-alface" data-item="alface">Alface</a></li><li><a href="#item-brocolis" data-item="brocolis">Brócolis</a></li><li><a href="#item-couve" data-item="couve">Couve</a></li><li><a href="#item-tomate" data-item="tomate">Tomate</a></li><li><a href="#item-cenoura" data-item="cenoura">Cenoura</a></li><li><a href="#item-cebola" data-item="cebola">Cebola</a></li><li><a href="#item-pimentao" data-item="pimentao">Pimentão</a></li><li><a href="#item-ovos" data-item="ovos">Ovos</a></li><li class="pills__more"><a href="#catalogo">ver catálogo completo <span aria-hidden="true">→</span></a></li>
-          </ul>
+          <div class="products__cta" data-reveal>
+            <a class="btn btn--red btn--lg" href="#catalogo" data-label="Catálogo" data-cat-open><span>Ver catálogo completo</span><span aria-hidden="true">→</span></a>
+          </div>
         </div>
       </section>
 
-      <!-- 3. A casa -->
+      <!-- 3. Banca: faixa larga com foto de feira; texto e botão são do site, por cima da área creme -->
+      <section class="banca" id="banca" data-banca>
+        <div class="banca__bg" data-banca-bg>
+          <img src="/img/banca.webp" srcset="/img/banca-sm.webp 900w, /img/banca.webp 1600w" sizes="100vw" alt="Morangos frescos em destaque numa banca de feira, com tomates, pimentões e salsinha sobre um pano de linho" width="1600" height="800" loading="lazy" data-banca-img />
+        </div>
+        <div class="wrap banca__in">
+          <div class="banca__text">
+            <img class="banca__sym" src="/logo/simbolo.webp" alt="" width="300" height="395" data-banca-sym />
+            <h2 class="banca__title" data-banca-title>
+              <span class="banca__l"><span>Cheiro</span> <span>de</span> <span>feira,</span></span>
+              <em class="banca__l"><span>gosto</span> <span>de</span> <span>casa.</span></em>
+            </h2>
+            <p class="banca__lead" data-banca-fade>Morango, frutas, verduras, legumes e ovos escolhidos a dedo, bem em frente ao Mercado Municipal.</p>
+            <a class="banca__btn" href="#catalogo" data-label="Catálogo" data-banca-fade><span>Ver os produtos</span><span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. A casa -->
       <section class="sec about" id="sobre">
         <div class="wrap about__grid">
           <div class="about__media" data-clip>
@@ -174,7 +225,7 @@
         </div>
       </section>
 
-      <!-- 4. Como pedir -->
+      <!-- 5. Como pedir -->
       <section class="sec steps" id="como-pedir">
         <div class="wrap">
           <div class="sec__head sec__head--center">
@@ -204,12 +255,12 @@
             <a class="btn btn--red btn--lg" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango!%20Gostaria%20de%20fazer%20um%20pedido%20%F0%9F%8D%93" target="_blank" rel="noopener" data-wa>
               <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Começar meu pedido</span>
             </a>
-            <a class="btn btn--line btn--lg" href="https://wa.me/c/556392594750" target="_blank" rel="noopener"><span>Ver catálogo no WhatsApp</span></a>
+            <a class="btn btn--line btn--lg" href="#catalogo" data-label="Catálogo"><span>Montar pedido pelo catálogo</span></a>
           </div>
         </div>
       </section>
 
-      <!-- 5. Visite -->
+      <!-- 6. Visite -->
       <section class="sec visit" id="visite">
         <div class="wrap">
           <div class="sec__head">
@@ -217,14 +268,12 @@
           </div>
           <div class="visit__grid">
             <article class="vcard vcard--addr" data-reveal>
-              <span class="vcard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin" /></svg></span>
               <h3 class="h3">Endereço</h3>
               <p class="vcard__big">Rua 21 de Abril, 80</p>
               <p>Centro, em frente ao Mercado Municipal<br />Araguaína - TO</p>
               <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Casa%20do%20Morango%2C%20Rua%2021%20de%20Abril%2C%2080%2C%20Centro%2C%20Aragua%C3%ADna%20-%20TO" target="_blank" rel="noopener">Abrir no Google Maps <span aria-hidden="true">→</span></a>
             </article>
             <article class="vcard" data-reveal>
-              <span class="vcard__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock" /></svg></span>
               <h3 class="h3">Horário</h3>
               <table class="hours" data-hours>
                 <caption class="sr">Horário de funcionamento</caption>
@@ -240,7 +289,6 @@
               </table>
             </article>
             <article class="vcard" data-reveal>
-              <span class="vcard__ico"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg></span>
               <h3 class="h3">WhatsApp</h3>
               <p class="vcard__big">(63) 99259-4750</p>
               <p>Pedidos, dúvidas e a lista da semana.<br />Pagamento em dinheiro, cartão ou PIX.</p>
@@ -250,7 +298,7 @@
         </div>
       </section>
 
-      <!-- 6. Chamada final -->
+      <!-- 7. Chamada final -->
       <section class="cta">
         <div class="wrap cta__in">
           <img class="cta__sym" src="/logo/simbolo.webp" alt="" width="420" height="553" data-cta-sym />
@@ -279,11 +327,11 @@
         </div>
         <div>
           <h3 class="ftr__h">Fale com a gente</h3>
-          <p><a href="https://wa.me/5563992594750" target="_blank" rel="noopener">(63) 99259-4750</a><br /><a href="https://www.instagram.com/casadomorango2/" target="_blank" rel="noopener">@casadomorango2</a></p>
+          <p><a href="https://wa.me/5563992594750?text=Ol%C3%A1,%20Casa%20do%20Morango!%20Gostaria%20de%20fazer%20um%20pedido%20%F0%9F%8D%93" target="_blank" rel="noopener">(63) 99259-4750</a><br /><a href="https://www.instagram.com/casadomorango2/" target="_blank" rel="noopener">@casadomorango2</a></p>
         </div>
       </div>
       <div class="wrap ftr__base">
-        <p>© <span data-year>2026</span> Casa do Morango. Todos os direitos reservados.</p>
+        <p>© <span data-year>2026</span> Casa do Morango. Todos os direitos reservados. <a class="ftr__priv" href="#privacidade" data-label="Privacidade">Política de privacidade</a></p>
         <a class="ftr__ds" href="https://diedrichssystems.com" target="_blank" rel="noopener"><span>Desenvolvido por</span><img src="/logo/diedrichs.webp" alt="Diedrichs Systems" width="240" height="92" loading="lazy" /></a>
       </div>
     </footer>
@@ -301,6 +349,7 @@
         <div class="wrap catview__in">
           <div class="catview__head">
             <h2 class="h2" id="catview-title">Nosso <em>catálogo</em></h2>
+            <p class="catview__lead">Escolha os produtos, ajuste as quantidades e mande a lista pronta no WhatsApp.</p>
           </div>
           <div class="filters" role="group" aria-label="Filtrar catálogo" data-filters>
             <button type="button" class="is-on" data-filter="todos" aria-pressed="true">Todos</button>
@@ -482,12 +531,82 @@
             </li>
           </ul>
           <div class="catview__foot">
-            <p class="catalog__note">Fotos ilustrativas. Consulte a disponibilidade do dia pelo WhatsApp.</p>
+            <p class="catalog__note">Toque em <strong>Adicionar</strong> nos produtos que você quer e envie a lista pelo WhatsApp. Fotos ilustrativas; a disponibilidade do dia é confirmada na conversa.</p>
             <a class="btn btn--red btn--lg" href="https://wa.me/5563992594750?text=Ol%C3%A1%2C%20Casa%20do%20Morango!%20Gostaria%20de%20fazer%20um%20pedido%20%F0%9F%8D%93" target="_blank" rel="noopener">
               <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Mandar minha lista</span>
             </a>
           </div>
         </div>
+      </div>
+      <div class="cart" data-cart aria-live="polite">
+        <div class="wrap cart__in">
+          <p class="cart__txt"><strong data-cart-n>0 itens</strong><span data-cart-list></span></p>
+          <a class="btn btn--red cart__btn" href="https://wa.me/5563992594750" target="_blank" rel="noopener" data-cart-send>
+            <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-wa" /></svg><span>Enviar pedido</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Política de Privacidade (LGPD): tela própria, aberta pelo rodapé -->
+    <div class="catview privview" id="privacidade" role="dialog" aria-modal="true" aria-labelledby="priv-title" aria-hidden="true" data-privview>
+      <div class="catview__bar">
+        <div class="wrap catview__bar-in">
+          <img class="catview__logo" src="/logo/horizontal.webp" alt="Casa do Morango" width="640" height="210" />
+          <button type="button" class="catview__back" data-privview-close><span aria-hidden="true">←</span> Voltar ao site</button>
+        </div>
+      </div>
+      <div class="catview__scroll" data-privview-scroll data-lenis-prevent>
+        <article class="wrap doc">
+          <h2 class="h2" id="priv-title">Política de <em>privacidade</em></h2>
+          <p class="doc__date">Última atualização: 27 de novembro de 2026</p>
+          <p class="doc__intro">Esta política explica como a Casa do Morango cuida dos dados pessoais de quem visita este site ou fala com a gente, de acordo com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018, a LGPD).</p>
+
+          <h3>1. Quem cuida dos seus dados</h3>
+          <p>A Casa do Morango, hortifrúti na Rua 21 de Abril, 80, Centro, em frente ao Mercado Municipal, em Araguaína - TO, é a responsável (controladora) pelos dados pessoais tratados a partir deste site. Para qualquer assunto sobre privacidade, fale com a gente pelo WhatsApp <a href="https://wa.me/5563992594750?text=Ol%C3%A1,%20Casa%20do%20Morango!%20Tenho%20uma%20d%C3%BAvida%20sobre%20meus%20dados%20pessoais." target="_blank" rel="noopener">(63) 99259-4750</a>.</p>
+
+          <h3>2. Quais dados tratamos</h3>
+          <ul>
+            <li><strong>Navegação no site.</strong> O site não tem cadastro, formulário nem login, e não usa cookies de publicidade ou de rastreamento. Como em qualquer site, a empresa de hospedagem registra dados técnicos de acesso (endereço IP, data e hora, navegador) para manter o site no ar e seguro.</li>
+            <li><strong>Pedidos e conversas pelo WhatsApp.</strong> Quando você toca em um botão do WhatsApp e nos manda mensagem, recebemos seu nome e número como aparecem no aplicativo, o conteúdo das mensagens e o que você escolher informar, como a lista de produtos e o endereço de entrega.</li>
+            <li><strong>Pagamento.</strong> No cartão ou no PIX, os dados financeiros são tratados pelas instituições de pagamento. Não guardamos número de cartão.</li>
+          </ul>
+
+          <h3>3. Para que usamos</h3>
+          <ul>
+            <li>Responder suas mensagens e dúvidas.</li>
+            <li>Separar, entregar ou combinar a retirada do seu pedido.</li>
+            <li>Emitir comprovantes e cumprir obrigações fiscais e legais.</li>
+            <li>Manter o site funcionando e protegido contra uso indevido.</li>
+          </ul>
+          <p>Não vendemos seus dados e não mandamos propaganda sem você pedir.</p>
+
+          <h3>4. Bases legais</h3>
+          <p>Tratamos os dados com base no art. 7º da LGPD: execução de contrato e procedimentos preliminares, para atender seu pedido (inciso V); cumprimento de obrigação legal, como a fiscal (inciso II); legítimo interesse, para a segurança e o funcionamento do site (inciso IX); e consentimento, quando for o caso, como para receber novidades pelo WhatsApp (inciso I).</p>
+
+          <h3>5. Com quem compartilhamos</h3>
+          <p>Só com quem é necessário para atender você:</p>
+          <ul>
+            <li>WhatsApp (Meta), por onde acontecem as conversas, conforme a política de privacidade do próprio aplicativo;</li>
+            <li>a empresa que hospeda o site;</li>
+            <li>o Google, que fornece as fontes de texto do site e o Google Maps, quando você toca em "Abrir no Google Maps";</li>
+            <li>as instituições de pagamento, no cartão ou no PIX;</li>
+            <li>autoridades públicas, quando a lei exigir.</li>
+          </ul>
+          <p>Alguns desses serviços podem guardar dados fora do Brasil, com as garantias previstas na LGPD.</p>
+
+          <h3>6. Por quanto tempo guardamos</h3>
+          <p>Guardamos as conversas e os dados dos pedidos pelo tempo necessário para atender você e pelos prazos que a lei exige, como os fiscais. Depois disso, os dados são apagados ou anonimizados.</p>
+
+          <h3>7. Seus direitos</h3>
+          <p>Pela LGPD (art. 18), você pode pedir a qualquer momento: a confirmação de que tratamos seus dados; o acesso a eles; a correção de dados incompletos ou desatualizados; a anonimização, o bloqueio ou a eliminação de dados desnecessários; a portabilidade; a informação sobre com quem compartilhamos; e a eliminação dos dados tratados com seu consentimento, com a revogação desse consentimento. É só mandar uma mensagem no <a href="https://wa.me/5563992594750?text=Ol%C3%A1,%20Casa%20do%20Morango!%20Tenho%20uma%20d%C3%BAvida%20sobre%20meus%20dados%20pessoais." target="_blank" rel="noopener">WhatsApp (63) 99259-4750</a>. Você também pode procurar a Autoridade Nacional de Proteção de Dados (ANPD).</p>
+
+          <h3>8. Segurança</h3>
+          <p>Usamos medidas razoáveis para proteger seus dados, como acesso restrito às conversas de pedidos e conexão segura (HTTPS) no site.</p>
+
+          <h3>9. Mudanças nesta política</h3>
+          <p>Podemos atualizar esta política quando for preciso. A data da última atualização fica sempre no topo desta página.</p>
+        </article>
       </div>
     </div>
 
@@ -505,9 +624,6 @@
       <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
       <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
       <symbol id="i-card" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></g></symbol>
-      <symbol id="i-fruit" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 15c-4-3-12-2-14 6-2 9 4 19 9 19 2 0 3-1 5-1s3 1 5 1c5 0 11-10 9-19-2-8-10-9-14-6Z"/><path d="M24 15c0-4 1-7 4-9"/><path d="M26 11c3-3 7-3 9-2-1 3-5 5-9 4"/></g></symbol>
-      <symbol id="i-leaf" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 38C8 20 20 9 39 9c1 19-10 30-27 29Z"/><path d="M10 38 30 18M18 30h8M22 26v-8"/></g></symbol>
-      <symbol id="i-egg" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 7c-7 0-13 12-13 21a13 13 0 0 0 26 0c0-9-6-21-13-21Z"/><path d="M18 30a6 6 0 0 0 5 5"/></g></symbol>
     </svg>
 
     <script type="module" src="/src/main.js"></script>
