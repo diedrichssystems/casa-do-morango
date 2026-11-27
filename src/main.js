@@ -92,6 +92,7 @@ const setMenu = (open) => {
 };
 menu.inert = true;
 burger.addEventListener('click', () => setMenu(!root.classList.contains('menu-open')));
+$('[data-menu-shade]').addEventListener('click', () => setMenu(false));
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && root.classList.contains('menu-open')) { setMenu(false); burger.focus(); } });
 // girou o tablet para a largura do computador com o menu aberto: fecha
 matchMedia('(min-width: 1081px)').addEventListener('change', (e) => { if (e.matches && root.classList.contains('menu-open')) setMenu(false); });
