@@ -157,36 +157,44 @@ em { font-style: italic; color: var(--red-text); }
 .menu-open .burger__lines i:last-child { transform: translateY(-3px) rotate(-45deg); }
 .menu-open .hdr::before { opacity: 1; box-shadow: none; }
 
-/* ---------- Menu do celular: painel creme que desce do topo, só com a altura dos links ---------- */
-.menu { position: fixed; inset: 0; z-index: 105; visibility: hidden; transition: visibility 0s linear .6s; }
+/* ---------- Menu do celular: tela cheia em creme ----------
+   Links no alto, foto da fachada ocupando o espaço do meio (cresce ou encolhe conforme a altura da tela)
+   e, embaixo, endereço, horário e o botão do WhatsApp. Nada de faixa vazia em nenhuma altura de tela. */
+.menu { position: fixed; inset: 0; z-index: 105; visibility: hidden; transition: visibility 0s linear .7s; }
 .menu-open .menu { visibility: visible; transition: visibility 0s; }
-.menu__shade { /* fundo escurecido atrás do painel; tocar nele fecha o menu */
-  position: absolute; inset: 0; background: rgba(43, 16, 19, .45); opacity: 0; transition: opacity .5s var(--out);
-}
-.menu-open .menu__shade { opacity: 1; }
+.menu__shade { display: none; }
 .menu__in {
-  position: relative; max-height: 100%; overflow-y: auto; padding: 96px var(--pad) 26px;
-  background: var(--cream); border-radius: 0 0 28px 28px; box-shadow: 0 30px 60px -30px rgba(43, 16, 19, .55);
-  clip-path: inset(0 0 100% 0 round 0 0 28px 28px); transition: clip-path .6s var(--ease);
+  position: absolute; inset: 0; display: flex; flex-direction: column; overflow-y: auto;
+  padding: 92px var(--pad) calc(22px + env(safe-area-inset-bottom)); background: var(--cream);
+  clip-path: inset(0 0 100% 0); transition: clip-path .7s var(--ease);
 }
-.menu-open .menu__in { clip-path: inset(0 0 0 0 round 0 0 28px 28px); }
-.menu__nav { display: grid; }
+.menu-open .menu__in { clip-path: inset(0 0 0 0); }
+.menu__nav { display: grid; flex: none; }
 .menu__nav a {
-  display: flex; align-items: center; gap: 14px; padding: 16px 2px; text-decoration: none; color: var(--red-ink);
-  border-bottom: 1px solid var(--line); opacity: 0; transform: translateY(14px);
-  transition: opacity .45s var(--out), transform .45s var(--out);
+  display: flex; align-items: center; gap: 14px; padding: 14px 2px; text-decoration: none; color: var(--red-ink);
+  border-bottom: 1px solid var(--line); opacity: 0; transform: translateY(16px);
+  transition: opacity .5s var(--out), transform .5s var(--out);
 }
 .menu__nav a::after { content: '→'; margin-left: auto; font-size: 20px; color: var(--red); }
 .menu__nav small { font: 700 12px/1 var(--sans); letter-spacing: .12em; color: var(--green-deep); }
 .menu__nav span { font: 600 30px/1.1 var(--serif); letter-spacing: -.015em; }
 .menu-open .menu__nav a { opacity: 1; transform: none; }
-.menu-open .menu__nav a:nth-child(1) { transition-delay: .12s; } .menu-open .menu__nav a:nth-child(2) { transition-delay: .17s; }
-.menu-open .menu__nav a:nth-child(3) { transition-delay: .22s; } .menu-open .menu__nav a:nth-child(4) { transition-delay: .27s; }
-.menu__info { display: grid; gap: 14px; margin-top: 22px; opacity: 0; transform: translateY(10px); transition: opacity .45s var(--out), transform .45s var(--out); }
-.menu-open .menu__info { opacity: 1; transform: none; transition-delay: .32s; }
+.menu-open .menu__nav a:nth-child(1) { transition-delay: .2s; } .menu-open .menu__nav a:nth-child(2) { transition-delay: .26s; }
+.menu-open .menu__nav a:nth-child(3) { transition-delay: .32s; } .menu-open .menu__nav a:nth-child(4) { transition-delay: .38s; }
+.menu__media {
+  position: relative; flex: 1 1 auto; min-height: 120px; margin: 20px 0 18px; border-radius: 22px; overflow: hidden; background: #1b0d0f;
+  opacity: 0; transform: scale(.96); transition: opacity .6s var(--out), transform .8s var(--out);
+}
+.menu__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.menu-open .menu__media { opacity: 1; transform: none; transition-delay: .4s; }
+.menu__info { display: grid; gap: 14px; flex: none; opacity: 0; transform: translateY(10px); transition: opacity .5s var(--out), transform .5s var(--out); }
+.menu-open .menu__info { opacity: 1; transform: none; transition-delay: .48s; }
 .menu__info .btn { width: 100%; }
-.menu__meta { font-size: 14px; line-height: 1.5; color: var(--ink-2); text-align: center; }
-.menu__meta strong { color: var(--ink); }
+.menu__meta { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; line-height: 1.45; color: var(--ink-2); }
+.menu__meta strong { display: block; color: var(--ink); }
+.menu__meta span:last-child { text-align: right; }
+/* telas baixas (celular deitado, aparelhos pequenos): a foto sai e o menu fica só com links e contatos */
+@media (max-height: 640px) { .menu__media { display: none; } .menu__info { margin-top: auto; padding-top: 18px; } }
 
 /* ---------- Topo ---------- */
 .hero { position: relative; padding: clamp(118px, 14vw, 150px) 0 clamp(64px, 8vw, 110px); overflow: hidden; }
